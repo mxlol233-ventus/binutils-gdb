@@ -562,7 +562,7 @@ if test x$enable_libgomp = x ; then
 	;;
     *-*-darwin* | *-*-aix*)
 	;;
-    nvptx*-*-* | amdgcn*-*-*)
+    nvptx*-*-* | amdgcn*-*-* | ventus*-*-* )
 	;;
     *)
 	noconfigdirs="$noconfigdirs target-libgomp"
@@ -698,7 +698,7 @@ if test "${ENABLE_LIBSTDCXX}" = "default" ; then
       # VxWorks uses the Dinkumware C++ library.
       noconfigdirs="$noconfigdirs target-libstdc++-v3"
       ;;
-    amdgcn*-*-*)
+    amdgcn*-*-* | ventus*-*-* )
       # Not ported/fails to build when using newlib.
       noconfigdirs="$noconfigdirs target-libstdc++-v3"
       ;;
@@ -1041,7 +1041,7 @@ case "${target}" in
     noconfigdirs="$noconfigdirs ld gas gdb gprof"
     noconfigdirs="$noconfigdirs sim target-rda"
     ;;
-  amdgcn*-*-*)
+  amdgcn*-*-* | ventus*-*-* )
     ;;
   arm-*-darwin*)
     noconfigdirs="$noconfigdirs ld gas gdb gprof"
